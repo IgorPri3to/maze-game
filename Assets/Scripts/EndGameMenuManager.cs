@@ -7,6 +7,7 @@ public class EndGameMenuManager : MonoBehaviour
 {
     public void Restart()
     {
+        Time.timeScale = 1;
         CursorManager.ToggleCursor(false);
         SceneManager.LoadScene(1); // Cambia de escena
     }

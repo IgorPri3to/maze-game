@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.1764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2453,7 +2453,7 @@ MonoBehaviour:
   door: {fileID: 710068982}
   message: {fileID: 1390733308}
   collectedKeys: 0
-  keysToCollect: 1
+  keysToCollect: 8
 --- !u!95 &1763458745
 Animator:
   serializedVersion: 5
