@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     public Text message;
     public int collectedKeys = 0;
     public int keysToCollect = 8;
+    public AudioSource keysSound;
+    public AudioSource masterKeysSound;
 
     private void Awake()
     {
@@ -30,8 +32,9 @@ public class PlayerManager : MonoBehaviour
     
     void OnTriggerEnter(Collider other) // Se ejecuta cuando el jugador colisiona con un objeto con un collider trigger
     {
-        if(other.CompareTag("Key")) { // Si el objeto colisionado es una llave...
-            other.gameObject.SetActive(false); // Hace desaparecer la llave
+        if(other.CompareTag("Key")) { // Si el objeto colisiona es una llave...
+            keysSound.Play();
+            other.gameObject.SetActive(false);
             collectedKeys++; // Suma una llave al conteo de llaves recolectadas
             if(collectedKeys == keysToCollect) { // Si el conteo de llaves recolectadas es igual al total de llaves a recolectar
                 Vector3[] positions = {
@@ -50,6 +53,7 @@ public class PlayerManager : MonoBehaviour
         }
         if(other.CompareTag("MasterKey")) { // Si el objeto colisionado es la llave maestra...
             door.SetActive(false); // Abre la puerta de salida del laberinto
+            masterKeysSound.Play();
             other.gameObject.SetActive(false); // Hace desaparecer la llave maestra
             message.text = "La puerta ha sido abierta, corre para salir del laberinto"; // Modifica el contenido del mensaje de la llave maestra por el de puerta abierta
         }

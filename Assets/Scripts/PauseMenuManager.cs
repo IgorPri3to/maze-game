@@ -26,12 +26,14 @@ public class PauseMenuManager : MonoBehaviour
                 CursorManager.ToggleCursor(false);
                 Time.timeScale = 1;
                 music.volume = 0.2f;
+                GameManager.Instance.Pause(false);
             } else {
                 canvasGroup.alpha = 1;
                 hud.alpha = 0;
                 CursorManager.ToggleCursor(true);
                 Time.timeScale = 0;
                 music.volume = 0.05f;
+                GameManager.Instance.Pause(true);
             }
         }    
     }

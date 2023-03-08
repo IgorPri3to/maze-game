@@ -16,6 +16,7 @@ public class CameraLook : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.IsPaused) return;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensivility;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensivility;
         xRotation += mouseY;
